@@ -9,12 +9,27 @@ int main(){
     insertNode(list1, tail, 9);
     insertNode(list1, tail, 4);
     insertNode(list1, tail, 2);
-    // print the linked list
-    ListNode *curr = list1;
+    
+    ListNode *list2 = nullptr;
+    ListNode *tail2 = nullptr;
+    insertNode(list2, tail2, 1);
+    insertNode(list2, tail2, 3);
+    insertNode(list2, tail2, 11);
 
-  printLinkedList(list1);
-  std::cout << "\nreversed:\n" << std::endl;
-  printLinkedListInReverse(list1);
- return 0;
+    printLinkedList(list1);
+    std::cout << std::endl;
+    printLinkedList(list2);
+    std::cout << "\nCombined:\n" << std::endl;
+    //printLinkedListInReverse(list1);
+    
+    ListNode *combinedList = nullptr;
+    ListNode *combinedListTail = nullptr;
+    combinedList = mergeTwoSortedLists(list1, list2);
+    printLinkedList(combinedList);
+
+    reverseLinkedList(combinedList);
+    printLinkedList(combinedList);
+
+  return 0;
 }
 

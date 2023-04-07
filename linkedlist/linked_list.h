@@ -8,7 +8,11 @@ struct ListNode{
 
 void insertNode(ListNode *&head, ListNode *&tail, int val);
 
-void mergeTwoSortedLists(ListNode* list1, ListNode* list2);
+void reverseLinkedList(ListNode *&head);
+
+void sortLinkedList(ListNode *&head);
+
+ListNode* mergeTwoSortedLists(ListNode* list1, ListNode* list2);
 
 void printLinkedList(ListNode* head);
 
