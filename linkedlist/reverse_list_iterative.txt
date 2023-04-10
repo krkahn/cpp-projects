@@ -1,0 +1,72 @@
+ListNode* reverseLinkedList(ListNode *head)
+{
+	ListNode* next = NULL;
+	ListNode* prev = NULL
+	ListNode* current = head;
+
+	while(current != NULL){
+		next = current->next;
+		current->next = prev; 
+		prev = cur;
+		cur = next;
+	}
+	head = prev;
+	return head;
+
+}
+
+Step by step of while loop for 
+4->2->0->NULL
+to become 
+NULL<-4<-2<-0
+Pass 1:
+
+    next is set to current->next, which is the node with value 2
+    current->next is set to prev, which is currently NULL
+    prev is set to current, which is the node with value 4
+    current is set to next, which is the node with value 2
+
+So after the first pass, the linked list becomes: NULL<-4 2->0->NULL
+
+Pass 2:
+
+    next is set to current->next, which is the node with value 0
+    current->next is set to prev, which is the node with value 4
+    prev is set to current, which is the node with value 2
+    current is set to next, which is the node with value 0
+
+So after the second pass, the linked list becomes: NULL<-4<-2 0->NULL
+
+Pass 3:
+
+    next is set to current->next, which is the node with value NULL
+    current->next is set to prev, which is the node with value 2
+    prev is set to current, which is the node with value 0
+    current is set to next, which is NULL
+
+So after the third pass, the linked list becomes: NULL<-4<-2<-0
+
+At this point, the current node is NULL, so the while loop exits. The final linked list is NULL<-4<-2<-0, which is the original linked list reversed.
+
+In terms of printing the values, here are the values of next, current->next, prev, and current in each pass:
+
+Pass 1:
+
+    next: 2
+    current->next: NULL
+    prev: 4
+    current: 2
+
+Pass 2:
+
+    next: 0
+    current->next: 4
+    prev: 2
+    current: 0
+
+Pass 3:
+
+    next: NULL
+    current->next: 2
+    prev: 0
+    current: NULL
